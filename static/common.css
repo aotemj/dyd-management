@@ -1,0 +1,38 @@
+.clearfix:after{
+	content:"";
+  display: block;
+  clear:both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+ul,li{
+	list-style: none ;
+}
+div,ul,li{
+	/*box-sizing: border-box;*/
+}
+/*修改element ui默认样式*/
+.el-menu-item-group__title{
+	display:none;
+}
+.el-submenu .el-menu-item{
+	font-size: 12px;
+	height:40px;
+	line-height: 40px;
+}
+.el-form--inline .el-form-item__label{
+	float: left;
+}
+.el-main{
+	line-height: 50px !important;
+}
+.el-table th{
+	text-align: center;
+}
+a{
+	text-decoration: none;
+}

@@ -1,0 +1,85 @@
+<template>
+	<!-- 侧边栏 -->
+	<div>
+		<el-menu default-active="1-4-1" class="el-menu-vertical-demo" :collapse="isCollapse" v-on:select="handleSelected">
+		  <el-submenu index="1">
+		   <template slot="title">
+		     <!-- <i class="el-icon-location"></i> -->
+		     <span slot="title">审核</span>
+		   </template>
+		   <el-menu-item-group>
+		     <span slot="title">1</span>
+		     <router-link to="/home/userUnDeposit">
+		     		<el-menu-item index="1-1">用户提现审核</el-menu-item>
+		     </router-link>
+		     <router-link to="/home/merchant">
+		     		<el-menu-item index="1-2">商户审核</el-menu-item>
+		     </router-link>
+
+		     <router-link to="/home/product">
+		     	<el-menu-item index="1-3">产品审核</el-menu-item>
+		     </router-link>
+		     <router-link to="/home/merchantUnDeposit">
+		     	<el-menu-item index="1-4">商家提现审核</el-menu-item>
+		     </router-link>
+		   </el-menu-item-group>
+		   <!-- <el-menu-item-group title="分组2">
+		     <el-menu-item index="1-3">选项3</el-menu-item>
+		   </el-menu-item-group>
+		   <el-submenu index="1-4">
+		     <span slot="title">选项4</span>
+		     <el-menu-item index="1-4-1">选项1</el-menu-item>
+		   </el-submenu> -->
+		 </el-submenu>
+
+		 <!-- <el-menu-item index="2">
+		   <i class="el-icon-menu"></i>
+		   <span slot="title">导航二</span>
+		 </el-menu-item>
+		 <el-menu-item index="3">
+		   <i class="el-icon-setting"></i>
+		   <span slot="title">导航三</span>
+		 </el-menu-item> -->
+		</el-menu>
+	</div>
+</template>
+<style scoped>
+	.el-menu-vertical-demo:not(.el-menu--collapse) {
+	  width: 200px;
+	  min-height: 400px;
+	}
+	/*一级标题*/
+	.el-submenu{
+		text-align: left;
+		padding-left:30px;
+	}
+	/*二级标题 列表*/
+	 .el-menu-item-group__title {
+		/*display:none;*/
+		/*background-color: pink;*/
+		font-size: 200px !important;
+	}
+
+	.el-menu-item, .el-submenu__title{
+		text-align: left;
+		/*background-color: pink;*/
+	}
+</style>
+<script>
+	export default {
+	  data() {
+	    return {
+	      isCollapse: false
+	    };
+	  },
+	  methods: {
+	  	// 点击菜单事件
+	  	handleSelected(key,keyPath){
+	  		console.log(key);
+	  		console.log(keyPath);
+
+	  	}
+	  }
+	}
+</script>
+
