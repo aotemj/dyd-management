@@ -22,6 +22,12 @@ import userUnDeposit from "./subcom/check/userUnDeposit.vue"
 //income 用户平台组件
 import income from './subcom/income/income.vue'
 
+// 保证金管理
+import deposit from "./subcom/deposit/deposit.vue"
+
+// 保证金协议管理
+import depositProtocol from "./subcom/deposit/depositProtocol.vue"
+
   export default {
      data() {
        return {
@@ -35,6 +41,8 @@ import income from './subcom/income/income.vue'
       subSidebar,//侧边栏
       userUnDeposit,//用户提现审核
       income,//收入平台
+      deposit,//保证金管理
+      depositProtocol,//保证金协议管理
      }
    };
 </script>

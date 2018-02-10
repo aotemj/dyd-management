@@ -156,6 +156,28 @@
 	        currentPage: 1,
 	        pagesize:10,
 			}
+		},
+		methods:{
+			handleSelectionChange(val) {
+	      this.multipleSelection = val;
+	    },
+	    	//分页
+  	   handleSizeChange(val) {
+          // console.log(`每页 ${val} 条`);
+          this.pagesize = val;
+        },
+        handleCurrentChange(val) {
+          console.log(`当前页: ${val}`);
+          this.currentPage = val;
+          // this.loadData(this.criteria, this.currentPage, this.pagesize);
+          // this.loadData();
+        },
+        loadData(){
+        	// console.log(this.currentPage);
+        	// console.log(this.pagesize);
+        	// let prevData = (this.currentPage-1)*this.pagesize;
+
+        }
 		}
 	}
 </script>

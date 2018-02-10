@@ -36,3 +36,9 @@ div,ul,li{
 a{
 	text-decoration: none;
 }
+.el-form--inline .el-form-item__content{
+	width:150px;
+}
+.el-textarea{
+	width: 80%;
+}

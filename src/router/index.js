@@ -19,6 +19,12 @@ import merchantUnDeposit from "../components/subcom/check/merchantUnDeposit.vue"
 // 收入平台
 import income from "../components/subcom/income/income.vue"
 
+// 保证金管理
+import deposit from "../components/subcom/deposit/deposit.vue"
+
+// 保证金协议管理
+import depositProtocol from "../components/subcom/deposit/depositProtocol.vue"
+
 Vue.use(Router)
 
 export default new Router({
@@ -56,6 +62,14 @@ export default new Router({
                 {
                     path:'/home/income',//收入平台
                     component:income
+                },
+                {
+                    path:'/home/deposit',//保证金管理
+                    component:deposit
+                },
+                {
+                    path:'/home/depositProtocol',//保证金协议管理
+                    component:depositProtocol
                 }
             ]
         },
