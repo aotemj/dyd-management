@@ -17,8 +17,10 @@ import  subHeader from './subcom/subHeader.vue'
 import subSidebar from "./subcom/subSidebar.vue"
 
 // userUnDeposit 用户提现审核组件
-
 import userUnDeposit from "./subcom/check/userUnDeposit.vue"
+
+//income 用户平台组件
+import income from './subcom/income/income.vue'
 
   export default {
      data() {
@@ -29,9 +31,10 @@ import userUnDeposit from "./subcom/check/userUnDeposit.vue"
       console.log(this.$store);
      },
      components:{
-      subHeader,
-      subSidebar,
+      subHeader,//头部
+      subSidebar,//侧边栏
       userUnDeposit,//用户提现审核
+      income,//收入平台
      }
    };
 </script>

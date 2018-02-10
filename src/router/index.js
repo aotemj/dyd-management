@@ -16,6 +16,8 @@ import product from "../components/subcom/check/product.vue"
 //商户提现审核
 import merchantUnDeposit from "../components/subcom/check/merchantUnDeposit.vue"
 
+// 收入平台
+import income from "../components/subcom/income/income.vue"
 
 Vue.use(Router)
 
@@ -50,6 +52,10 @@ export default new Router({
                 {
                     path: '/home/merchantUnDeposit',//商户提现审核
                     component:merchantUnDeposit
+                },
+                {
+                    path:'/home/income',//收入平台
+                    component:income
                 }
             ]
         },
