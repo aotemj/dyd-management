@@ -17,53 +17,53 @@
 		    <el-button type="primary" @click="">确定</el-button>
 		  </el-form-item>
 		</el-form>
-<el-table
-			    ref="multipleTable"
-			    :data="tableData3"
-			    tooltip-effect="dark"
-			    style="width: 100%"
-			    @selection-change="handleSelectionChange">
-			    <el-table-column
-			      type="selection"
-			      width="55">
-			    </el-table-column>
-			    <el-table-column
-			      prop="name"
-			      label="用户累计给出优惠"
-			      width="">
-			    </el-table-column>
-			    <el-table-column
-			      prop="name"
-			      label="用户累计保证金"
-			      width="">
-			    </el-table-column>
-			    <el-table-column
-			      prop="name"
-			      label="用户累计提现"
-			      width="">
-			    </el-table-column>
-					<el-table-column
-					  prop="name"
-					  label="用户累计给出比例"
-					  width="">
-					</el-table-column>
-					<el-table-column
-					  prop="name"
-					  label="用户累计预计付款"
-					  width="">
-					</el-table-column>
-		  </el-table>
-		  <div class="block fr">
-		     <!-- <span class="demonstration">完整功能</span> -->
-		     <el-pagination
-		       @size-change="handleSizeChange"
-		       @current-change="handleCurrentChange"
-		       :current-page="currentPage"
-		       :page-size="pagesize"
-		       layout="total, sizes, prev, pager, next, jumper"
-		       :total="tableData3.length">
-		     </el-pagination>
-		   </div>
+		<el-table
+	    ref="multipleTable"
+	    :data="tableData3"
+	    tooltip-effect="dark"
+	    style="width: 100%"
+	    @selection-change="handleSelectionChange">
+	    <el-table-column
+	      type="selection"
+	      width="55">
+	    </el-table-column>
+	    <el-table-column
+	      prop="name"
+	      label="用户累计给出优惠"
+	      width="">
+	    </el-table-column>
+	    <el-table-column
+	      prop="name"
+	      label="用户累计保证金"
+	      width="">
+	    </el-table-column>
+	    <el-table-column
+	      prop="name"
+	      label="用户累计提现"
+	      width="">
+	    </el-table-column>
+			<el-table-column
+			  prop="name"
+			  label="用户累计给出比例"
+			  width="">
+			</el-table-column>
+			<el-table-column
+			  prop="name"
+			  label="用户累计预计付款"
+			  width="">
+			</el-table-column>
+  </el-table>
+  <div class="block fr">
+     <!-- <span class="demonstration">完整功能</span> -->
+     <el-pagination
+       @size-change="handleSizeChange"
+       @current-change="handleCurrentChange"
+       :current-page="currentPage"
+       :page-size="pagesize"
+       layout="total, sizes, prev, pager, next, jumper"
+       :total="tableData3.length">
+     </el-pagination>
+   </div>
 
 
 	</div>

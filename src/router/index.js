@@ -25,6 +25,21 @@ import deposit from "../components/subcom/deposit/deposit.vue"
 // 保证金协议管理
 import depositProtocol from "../components/subcom/deposit/depositProtocol.vue"
 
+// 角色管理
+import role from "../components/subcom/system/role.vue"
+
+// 操作日志
+import operationLog from "../components/subcom/system/operationLog.vue"
+
+// 管理员管理
+import administrator from "../components/subcom/system/administrator.vue"
+
+// 协议管理
+import protocal from "../components/subcom/system/protocol.vue"
+
+// 资源管理
+import resource from "../components/subcom/system/resource.vue"
+
 Vue.use(Router)
 
 export default new Router({
@@ -70,6 +85,26 @@ export default new Router({
                 {
                     path:'/home/depositProtocol',//保证金协议管理
                     component:depositProtocol
+                },
+                {
+                    path:'/home/role',//角色管理
+                    component:role
+                },
+                {
+                    path:'/home/operationLog',//操作日志
+                    component:operationLog
+                },
+                {
+                    path:'/home/administrator',//管理员管理
+                    component:administrator
+                },
+                {
+                  path:'/home/protocal',//协议管理
+                  component:protocal
+                },
+                {
+                  path:'/home/resource',//资源管理
+                  component:resource
                 }
             ]
         },

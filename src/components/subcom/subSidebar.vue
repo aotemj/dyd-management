@@ -23,13 +23,6 @@
 		     	<el-menu-item index="1-4">商家提现审核</el-menu-item>
 		     </router-link>
 		   </el-menu-item-group>
-		   <!-- <el-menu-item-group title="分组2">
-		     <el-menu-item index="1-3">选项3</el-menu-item>
-		   </el-menu-item-group>
-		   <el-submenu index="1-4">
-		     <span slot="title">选项4</span>
-		     <el-menu-item index="1-4-1">选项1</el-menu-item>
-		   </el-submenu> -->
 		  </el-submenu>
  			<el-submenu index="2">
 		    <template slot="title">
@@ -58,7 +51,34 @@
 		      </router-link>
 		    </el-menu-item-group>
 		  </el-submenu>
-
+			<el-submenu index="4">
+			  <template slot="title">
+			    <!-- <i class="el-icon-location"></i> -->
+			    <span slot="title">系统管理</span>
+			  </template>
+			  <el-menu-item-group>
+			    <span slot="title">4</span>
+			    <router-link to="/home/role">
+			   		<el-menu-item index="4-1">角色管理</el-menu-item>
+			    </router-link>
+			    <router-link to="/home/operationLog">
+			   		<el-menu-item index="4-2">操作日志</el-menu-item>
+			    </router-link>
+			     <router-link to="">
+			   		<el-menu-item index="4-3">全局配置参数</el-menu-item>
+			    </router-link>
+			     </router-link>
+			     <router-link to="/home/administrator">
+			   		<el-menu-item index="4-4">管理员管理</el-menu-item>
+			    </router-link>
+				  <router-link to="/home/protocal">
+						<el-menu-item index="4-5">协议管理</el-menu-item>
+				 </router-link>
+				   <router-link to="/home/resource">
+				 		<el-menu-item index="4-6">资源管理</el-menu-item>
+				  </router-link>
+			  </el-menu-item-group>
+			</el-submenu>
 		</el-menu>
 	</div>
 </template>

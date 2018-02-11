@@ -28,6 +28,12 @@ import deposit from "./subcom/deposit/deposit.vue"
 // 保证金协议管理
 import depositProtocol from "./subcom/deposit/depositProtocol.vue"
 
+// 角色管理
+import role from "./subcom/system/role.vue"
+
+//操作日志
+import operationLog from "./subcom/system/operationLog.vue"
+
   export default {
      data() {
        return {
@@ -43,6 +49,8 @@ import depositProtocol from "./subcom/deposit/depositProtocol.vue"
       income,//收入平台
       deposit,//保证金管理
       depositProtocol,//保证金协议管理
+      role,//角色管理
+      operationLog,//操作日志
      }
    };
 </script>
