@@ -40,6 +40,9 @@ import protocal from "../components/subcom/system/protocol.vue"
 // 资源管理
 import resource from "../components/subcom/system/resource.vue"
 
+// 联系合作
+import contactCooperation from "../components/subcom/systemInfo/contactCooperation.vue"
+
 Vue.use(Router)
 
 export default new Router({
@@ -105,6 +108,10 @@ export default new Router({
                 {
                   path:'/home/resource',//资源管理
                   component:resource
+                },
+                {
+                  path:'/home/contactCooperation',//联系合作
+                  component:contactCooperation
                 }
             ]
         },

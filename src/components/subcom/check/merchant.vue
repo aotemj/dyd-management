@@ -8,8 +8,15 @@
 		    style="width: 100%"
 		    @selection-change="handleSelectionChange">
 		    <el-table-column
+		    :default-sort = "{prop: 'date', order: 'descending'}"
 		      type="selection"
 		      width="55">
+		    </el-table-column>
+		    <el-table-column
+		      prop="date"
+		      label="时间排序测试"
+		      sortable
+		      width="">
 		    </el-table-column>
 		    <el-table-column
 		      prop="name"
@@ -73,12 +80,12 @@
 			return {
 				tableData3: [
          		{
-		          date: '2016-05-03',
+		          date: '2016-05-01',
 		          name: '王小虎',
 		          address: '上海市普陀区金沙江路 1518 弄'
         		},
         		{
-		          date: '2016-05-03',
+		          date: '2016-04-02',
 		          name: '王小虎',
 		          address: '上海市普陀区金沙江路 1518 弄'
         		},

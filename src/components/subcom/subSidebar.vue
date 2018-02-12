@@ -79,6 +79,28 @@
 				  </router-link>
 			  </el-menu-item-group>
 			</el-submenu>
+
+			<el-submenu index="5">
+			  <template slot="title">
+			    <!-- <i class="el-icon-location"></i> -->
+			    <span slot="title">系统消息</span>
+			  </template>
+			  <el-menu-item-group>
+			    <span slot="title">5</span>
+
+			    <router-link to="/home/contactCooperation">
+			   		<el-menu-item index="5-1">联系合作</el-menu-item>
+			    </router-link>
+
+			    <router-link to="/home/operationLog">
+			   		<el-menu-item index="5-2">消息管理</el-menu-item>
+			    </router-link>
+
+			    <router-link to="">
+			   		<el-menu-item index="5-3">通知消息</el-menu-item>
+			    </router-link>
+			  </el-menu-item-group>
+			</el-submenu>
 		</el-menu>
 	</div>
 </template>
