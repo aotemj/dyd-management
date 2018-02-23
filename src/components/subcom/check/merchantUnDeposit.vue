@@ -34,7 +34,7 @@
       max-height="500"
       highlight-current-row
       ref="multipleTable"
-      :data="tableData3"
+      :data="tableData"
       tooltip-effect="dark"
       style="width: 100%"
       :row-class-name="tableRowClassName"
@@ -48,9 +48,10 @@
       <el-table-column
         label="商家名称"
         width=""
+       :row-class-name="active"
       >
         <template slot-scope="scope">
-          <el-tooltip v-if="isShow"  class="item" effect="dark" placement="top">
+          <el-tooltip v-if="isShow"  class="item" effect="dark" placement="right">
             <div slot="content">{{scope.row.name}}</div>
             <el-button v-on:click="toggleShow" type="text" style="color:#000">
               {{scope.row.name}}
@@ -61,38 +62,70 @@
       </el-table-column>
 
       <el-table-column
-        prop="name"
         label="提现金额"
         width="">
+        <template slot-scope="scope">
+          <el-tooltip v-if="isShow"  class="item" effect="dark" placement="right">
+            <div slot="content">{{scope.row.amount}}</div>
+            <el-button v-on:click="toggleShow" type="text" style="color:#000">
+              {{scope.row.amount}}
+            </el-button>
+          </el-tooltip>
+         <div v-else="isShow" v-on:click="toggleShow">{{scope.row.amount}}</div>
+        </template>
       </el-table-column>
       <el-table-column
         prop="name"
         label="提现方式"
         width="">
+        <template slot-scope="scope">
+         <el-tooltip v-if="isShow"  class="item" effect="dark" placement="right">
+           <div slot="content">{{scope.row.withdrawalWay}}</div>
+           <el-button v-on:click="toggleShow" type="text" style="color:#000">
+             {{scope.row.withdrawalWay}}
+           </el-button>
+         </el-tooltip>
+        <div v-else="isShow" v-on:click="toggleShow">{{scope.row.withdrawalWay}}</div>
+        </template>
       </el-table-column>
       <el-table-column
-        prop="name"
         label="状态"
         width="">
+        <template slot-scope="scope">
+          <el-tooltip v-if="isShow"  class="item" effect="dark" placement="right">
+            <div slot="content">{{scope.row.status}}</div>
+            <el-button v-on:click="toggleShow" type="text" style="color:#000">
+              {{scope.row.status}}
+            </el-button>
+          </el-tooltip>
+         <div v-else="isShow" v-on:click="toggleShow">{{scope.row.status}}</div>
+        </template>
       </el-table-column>
       <el-table-column
-        prop="name"
         label="使用用户"
         width="">
+        <template slot-scope="scope">
+          <el-tooltip v-if="isShow"  class="item" effect="dark" placement="right">
+            <div slot="content">{{scope.row.user}}</div>
+            <el-button v-on:click="toggleShow" type="text" style="color:#000">
+              {{scope.row.user}}
+            </el-button>
+          </el-tooltip>
+         <div v-else="isShow" v-on:click="toggleShow">{{scope.row.user}}</div>
+        </template>
       </el-table-column>
       <el-table-column
         label="提现时间"
         :filters="[{text:'2015-06-01',value:'2015-06-01'},{text:'2016-05-03',value:'2016-05-03'}]"
         :filter-method="filterHandle"
-        prop="date"
         width="">
-        <!--<template slot-scope="scope">{{ scope.row.date }}</template>-->
+        <template slot-scope="scope">{{ scope.row.date }}</template>
       </el-table-column>
       <el-table-column
         label="操作"
         width="">
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+          <el-button @click="handleClick(scope.row)" type="text" size="small" class="active">查看</el-button>
           <el-button type="text" size="small">编辑</el-button>
         </template>
       </el-table-column>
@@ -105,7 +138,7 @@
         :current-page="currentPage"
         :page-size="pagesize"
         layout="total, sizes, prev, pager, next, jumper"
-        :total="tableData3.length">
+        :total="tableData.length">
       </el-pagination>
     </div>
   </div>
@@ -119,54 +152,24 @@
           region: ''
         },
         value5: 0,
-        tableData3: [
+        tableData: [
           {
-            date: '2016-01-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄',
-            tag: '家'
+            date: '2016-01-03',//提现时间
+            name: '扬州茶楼',//商家名称
+            address: '扬州市浦江东路',//商家地址
+            amount:'222.20',//提现金额
+            withdrawalWay:'自提',//提现方式
+            status:'正常',//状态
+            user:'小明',//使用用户
           },
           {
-            date: '2016-02-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄',
-            tag: '公司'
-          },
-          {
-            date: '2016-03-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄',
-            tag: '家'
-          },
-          {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄',
-            tag: '公司'
-          },
-          {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄',
-            tag: '家'
-          },
-          {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄',
-            tag: '公司'
-          },
-          {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄',
-            tag: '家'
-          },
-          {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄',
-            tag: '公司'
+            date: '2016-12-31',//提现时间
+            name: '重庆鱼火锅',//商家名称
+            address: '重庆市苑北路1号附4号',//商家地址
+            amount:'810.90',//提现金额
+            withdrawalWay:'自提',//提现方式
+            status:'正常',//状态
+            user:'小红',//使用用户
           }
         ],
         multipleSelection: [],
@@ -184,6 +187,10 @@
         } else {
           return 'success-row'
         }
+      },
+      // 表格激活颜色
+      active(){
+        return 'active'
       },
       toggleShow(){
         this.isShow=!this.isShow
@@ -222,5 +229,4 @@
   .el-form--inline .el-form-item__label {
     float: left !important;
   }
-
 </style>
