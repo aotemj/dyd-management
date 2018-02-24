@@ -141,8 +141,6 @@
   </div>
 </template>
 <script>
-import Btn from '../../egridDemo/cell-btn.vue'
-import Editor from '../../egridDemo/cell-editor.vue'
 import Vue from "vue"
 
   export default {
@@ -204,11 +202,6 @@ import Vue from "vue"
       },
       // 点击当前行
       rowClick(row, event, column){
-        console.log(row);
-        console.log('--------------------------');
-        console.log(event);
-        console.log('--------------------------');
-        console.log(column);
       }
     }
   }

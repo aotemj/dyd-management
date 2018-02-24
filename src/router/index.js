@@ -43,20 +43,13 @@ import resource from "../components/subcom/system/resource.vue"
 // 联系合作
 import contactCooperation from "../components/subcom/systemInfo/contactCooperation.vue"
 
-// egridDemo
-import egridDemo from "../components/egridDemo/egridDemo.vue"
-
 Vue.use(Router)
 
 export default new Router({
     routes: [
         {
             path: '/',
-            redirect: '/egrid'
-        },
-        {
-            path: '/egrid',
-            component: egridDemo
+            redirect: '/home'
         },
         {
             path: '/login',
