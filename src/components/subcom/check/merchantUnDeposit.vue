@@ -42,7 +42,9 @@
         v-on:current-change="currentChange"
         @selection-change="handleSelectionChange">
         <!-- 单选框 -->
-        <el-table-column fixed type="selection" width="55"> </el-table-column>
+        <el-table-column fixed type="selection" width="45"> </el-table-column>
+        <!-- 索引 -->
+        <el-table-column type="index" width="20"></el-table-column>
         <el-table-column label="商家名称">
           <template slot-scope="scope">
             <el-tooltip v-if="isShow" class="item" effect="dark" placement="right">
