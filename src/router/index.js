@@ -43,13 +43,20 @@ import resource from "../components/subcom/system/resource.vue"
 // 联系合作
 import contactCooperation from "../components/subcom/systemInfo/contactCooperation.vue"
 
+// egridDemo
+import egridDemo from "../components/egridDemo/egridDemo.vue"
+
 Vue.use(Router)
 
 export default new Router({
     routes: [
         {
             path: '/',
-            redirect: '/home'
+            redirect: '/egrid'
+        },
+        {
+            path: '/egrid',
+            component: egridDemo
         },
         {
             path: '/login',
@@ -59,65 +66,61 @@ export default new Router({
         {
             path: '/home',
             name: 'homepage',
-            component:home,
+            component: home,
             children: [
                 {
-                    path: '/home/userUnDeposit',//用户提现审核
-                    component:userUnDeposit
+                    path: '/home/userUnDeposit', //用户提现审核
+                    component: userUnDeposit
                 },
                 {
-                    path: '/home/merchant',//商户审核
-                    component:merchant
+                    path: '/home/merchant', //商户审核
+                    component: merchant
                 },
                 {
-                    path: '/home/product',//产品审核
-                    component:product
+                    path: '/home/product', //产品审核
+                    component: product
                 },
                 {
-                    path: '/home/merchantUnDeposit',//商户提现审核
-                    component:merchantUnDeposit
+                    path: '/home/merchantUnDeposit', //商户提现审核
+                    component: merchantUnDeposit
                 },
                 {
-                    path:'/home/income',//收入平台
-                    component:income
+                    path: '/home/income', //收入平台
+                    component: income
                 },
                 {
-                    path:'/home/deposit',//保证金管理
-                    component:deposit
+                    path: '/home/deposit', //保证金管理
+                    component: deposit
                 },
                 {
-                    path:'/home/depositProtocol',//保证金协议管理
-                    component:depositProtocol
+                    path: '/home/depositProtocol', //保证金协议管理
+                    component: depositProtocol
                 },
                 {
-                    path:'/home/role',//角色管理
-                    component:role
+                    path: '/home/role', //角色管理
+                    component: role
                 },
                 {
-                    path:'/home/operationLog',//操作日志
-                    component:operationLog
+                    path: '/home/operationLog', //操作日志
+                    component: operationLog
                 },
                 {
-                    path:'/home/administrator',//管理员管理
-                    component:administrator
+                    path: '/home/administrator', //管理员管理
+                    component: administrator
                 },
                 {
-                  path:'/home/protocal',//协议管理
-                  component:protocal
+                    path: '/home/protocal', //协议管理
+                    component: protocal
                 },
                 {
-                  path:'/home/resource',//资源管理
-                  component:resource
+                    path: '/home/resource', //资源管理
+                    component: resource
                 },
                 {
-                  path:'/home/contactCooperation',//联系合作
-                  component:contactCooperation
+                    path: '/home/contactCooperation', //联系合作
+                    component: contactCooperation
                 }
             ]
-        },
-        {
-            path: '',
-            name: '',
         }
     ]
 })

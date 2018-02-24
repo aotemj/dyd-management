@@ -11,6 +11,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
 
+import Egrid from "egrid"
+Vue.use(Egrid)
+
 import '../static/common.css'
 
 // 路由验证

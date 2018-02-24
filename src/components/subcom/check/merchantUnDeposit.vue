@@ -30,7 +30,53 @@
         <el-button size="mini" type="primary" @click="">批量提现</el-button>
       </el-form-item>
     </el-form>
+
+    <!-- 简单封装写法 -->
     <el-table
+     :data="data"
+     style="width: 100%" >
+     <template v-for="column in columns">
+        <el-table-column  :prop="column.prop" :label="column.label" :formatter="column.formatter">
+          <template scope="scope">
+            <el-tooltip v-if="isShow"  class="item" effect="dark" placement="right">
+              <div slot="content">{{scope.row.name}}</div>
+              <el-button v-on:click="toggleShow" type="text" style="color:#000">
+                {{scope.row.name}}
+              </el-button>
+            </el-tooltip>
+            <div v-else="isShow" v-on:click="toggleShow">{{scope.row.name}}</div>
+          </template>
+        </el-table-column>
+        <!--   <el-table-column v-else :prop="column.prop" :label="column.label" :width="column.width" :formatter="column.formatter">
+          </el-table-column> -->
+      </template>
+     <!-- <el-table-column
+       prop="name"
+       label="姓名"
+       width="180">
+     </el-table-column> -->
+    <!--  <el-table-column
+       prop="address"
+       label="地址">
+     </el-table-column> -->
+   </el-table>
+
+    <!-- egrid写法 -->
+    <!-- <egrid
+      max-height="500"
+      column-type="selection"
+      :data="data"
+      :columns="columns"
+      :columns-schema="columnsSchema"
+      :columns-props="columnsProps"
+      :columns-handler="columnsHandler"
+      @selection-change="selectionChange"
+      :filter-method="filterHandle"
+    >
+    </egrid> -->
+
+      <!-- 原生写法 -->
+      <!--  <el-table
       max-height="500"
       highlight-current-row
       ref="multipleTable"
@@ -129,7 +175,7 @@
           <el-button type="text" size="small">编辑</el-button>
         </template>
       </el-table-column>
-    </el-table>
+      </el-table> -->
     <div class="block fr">
       <!-- <span class="demonstration">完整功能</span> -->
       <el-pagination
@@ -138,12 +184,16 @@
         :current-page="currentPage"
         :page-size="pagesize"
         layout="total, sizes, prev, pager, next, jumper"
-        :total="tableData.length">
+        :total="data.length">
       </el-pagination>
     </div>
   </div>
 </template>
 <script>
+import Btn from '../../egridDemo/cell-btn.vue'
+import Editor from '../../egridDemo/cell-editor.vue'
+import Vue from "vue"
+
   export default {
     data() {
       return {
@@ -176,7 +226,47 @@
         // 分页
         currentPage: 1,
         pagesize: 10,
-        isShow:true
+        isShow:true,
+        data: this.$store.state.data,
+        columns: this.$store.state.columns,
+        // columnsProps 用于定义 columns 公共的属性
+        columnsProps: {
+          width: 'auto',
+          sortable: true,
+          // 定义表格列如何渲染
+          component: Editor
+        },
+
+        // columnsSchema 可以用来单独定义 columns 的某一列，这里的设置会覆盖 columnsProps 的配置属性
+        columnsSchema: {
+          '日期':{
+            filters:[
+              {text: '2016-05-01', value: '2016-05-01'},
+              {text: '2016-05-02', value: '2016-05-02'},
+              {text: '2016-05-03', value: '2016-05-03'},
+              {text: '2016-05-04', value: '2016-05-04'}
+            ],
+            // filter-method:'filterHandle'
+          },
+          '地址': {
+            width: 'auto',
+            // propsHandler 可用于转换传给自定义组件的 props 这里将 props 变成了 address
+            propsHandler ({ col, row }) {
+              return { address: row[col.prop] }
+            },
+            // 这里的 props 是 address
+            component: Vue.extend({
+              props: ['address'],
+              render (h) {
+                return h('span', {
+                  // style: { color: '#20A0FF' }
+                }, this.address)
+              }
+            })
+          }
+        }
+
+
       };
     },
     methods: {
@@ -187,10 +277,6 @@
         } else {
           return 'success-row'
         }
-      },
-      // 表格激活颜色
-      active(){
-        return 'active'
       },
       toggleShow(){
         this.isShow=!this.isShow
@@ -213,14 +299,30 @@
         // this.loadData();
       },
       loadData() {
-        // console.log(this.currentPage);
-        // console.log(this.pagesize);
-        // let prevData = (this.currentPage-1)*this.pagesize;
       },
       //时间筛选
       filterHandle(value, row, column) {
         const property = column['property'];
         return row [property] === value;
+      },
+      //
+       // columnsHandler 可用于在现有的 columns 进行操作，对 columns 进行增删改，这里新增了操作列
+      columnsHandler (cols) {
+        return cols.concat({
+          label: '操作',
+          align: 'left',
+          component: Btn,
+          // listeners 可用于监听自定义组件内部 $emit 出的事件
+          listeners: {
+            'row-edit' (row) {
+              console.log('row-edit', row)
+            }
+          }
+        })
+      },
+      //数据
+      selectionChange (rows) {
+        console.log('selected', rows)
       }
     }
   }
