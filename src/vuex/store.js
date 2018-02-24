@@ -9,74 +9,43 @@ Vue.use(Vuex)
 const state = {
     data: [
         {
-            date: '2016-05-01',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
+            date: '2016-01-03', //提现时间
+            name: '扬州茶楼', //商家名称
+            address: '扬州市浦江东路', //商家地址
+            amount: 222.20, //提现金额
+            withdrawalWay: '自提', //提现方式
+            status: '正常', //状态
+            user: '小明', //使用用户
         },
         {
-            date: '2016-01-12',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
+            date: '2016-12-31', //提现时间
+            name: '重庆鱼火锅', //商家名称
+            address: '重庆市苑北路1号附4号', //商家地址
+            amount: 810.90, //提现金额
+            withdrawalWay: '自提', //提现方式
+            status: '正常', //状态
+            user: '小红', //使用用户
         },
         {
-            date: '2016-12-06',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-        },
-        {
-            date: '2016-01-09',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
+            date: '2016-02-08', //提现时间
+            name: '重庆鱼火锅', //商家名称
+            address: '重庆市苑北路1号附4号', //商家地址
+            amount: 810.90, //提现金额
+            withdrawalWay: '自提', //提现方式
+            status: '正常', //状态
+            user: '小红', //使用用户
         }
     ],
-    columns: [
-        {
-            label: '日期',
-            prop: 'date'
-        },
-        {
-            label: '姓名',
-            prop: 'name'
-        },
-        {
-            label: '省份',
-            prop: 'province'
-        },
-        {
-            label: '市区',
-            prop: 'city'
-        },
-        {
-            label: '地址',
-            prop: 'address'
-        },
-        {
-            label: '邮编',
-            prop: 'zip'
-        }
-    ]
 }
 
 
 // 定义所需的 mutations
 const mutations = {
     INCREMENT(state) {
-        state.count++
+        // state.count++
     },
     DECREMENT(state) {
-        state.count--
+        // state.count--
     }
 }
 

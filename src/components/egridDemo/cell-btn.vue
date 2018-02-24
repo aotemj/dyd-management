@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<button v-on:click="todo">{{row._edit?"完成":"编辑"}}</button>
-		<button>删除</button>
+		<button v-on:click="del">删除</button>
 	</div>
 </template>
 <script>
@@ -10,7 +10,10 @@
 		methods:{
 			todo(){
 				this.$emit('row-editor', this.row)
-				this.$set(this.row, '_edit', !this.row._edit)
+				this.$set(this.row,'_edit', !this.row._edit)
+			},
+			del(){
+				console.log(this.row);
 			}
 		}
 	}

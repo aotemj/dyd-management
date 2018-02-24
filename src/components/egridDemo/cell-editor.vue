@@ -19,7 +19,7 @@
 </script>
 <style scoped>
 	.edit{
-		max-width: 90px;
+		max-width: 160px;
 		text-align: center;
 	}
 </style>
