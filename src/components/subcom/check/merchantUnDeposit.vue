@@ -29,12 +29,12 @@
     </el-form>
       <!-- 原生写法 -->
       <el-table
-        max-height="500"
+        height="500"
         fit
         stripe
         highlight-current-row
         ref="multipleTable"
-        :data="data"
+        :data="data.slice((currentPage-1)*pagesize,currentPage*pagesize)"
         tooltip-effect="dark"
         style="width: 100%"
         v-on:select-all="selectAll"
@@ -43,7 +43,6 @@
         @selection-change="handleSelectionChange">
         <!-- 单选框 -->
         <el-table-column fixed type="selection" width="55"> </el-table-column>
-
         <el-table-column label="商家名称">
           <template slot-scope="scope">
             <el-tooltip v-if="isShow" class="item" effect="dark" placement="right">
@@ -127,17 +126,18 @@
           </template>
         </el-table-column>
       </el-table>
-    <div class="block fr">
-      <!-- <span class="demonstration">完整功能</span> -->
-      <el-pagination
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page="currentPage"
-        :page-size="pagesize"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total="data.length">
-      </el-pagination>
-    </div>
+      <div class="block fr">
+        <!-- <span class="demonstration">完整功能</span> -->
+        <el-pagination
+
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage"
+          :page-size="pagesize"
+          layout="total,sizes, prev, pager, next, jumper"
+          :total="data.length">
+        </el-pagination>
+      </div>
   </div>
 </template>
 <script>
