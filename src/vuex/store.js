@@ -13,7 +13,7 @@ const state = {
             name: '扬州茶楼', //商家名称
             address: '扬州市浦江东路', //商家地址
             amount: 222.20, //提现金额
-            withdrawalWay: '自提', //提现方式
+            withdrawalWay: '支付宝', //提现方式
             status: '正常', //状态
             user: '小明', //使用用户
         },
@@ -22,18 +22,18 @@ const state = {
             name: '重庆鱼火锅', //商家名称
             address: '重庆市苑北路1号附4号', //商家地址
             amount: 810.90, //提现金额
-            withdrawalWay: '自提', //提现方式
+            withdrawalWay: '微信', //提现方式
             status: '正常', //状态
             user: '小红', //使用用户
         },
         {
             date: '2016-02-08', //提现时间
-            name: '重庆鱼火锅', //商家名称
-            address: '重庆市苑北路1号附4号', //商家地址
-            amount: 810.90, //提现金额
-            withdrawalWay: '自提', //提现方式
+            name: '重庆鱼火锅02', //商家名称
+            address: '重庆市苑北路1号附14号', //商家地址
+            amount: 180.10, //提现金额
+            withdrawalWay: '银行卡', //提现方式
             status: '正常', //状态
-            user: '小红', //使用用户
+            user: '小丽', //使用用户
         }
     ],
 }

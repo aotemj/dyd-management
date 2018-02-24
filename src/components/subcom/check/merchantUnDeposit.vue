@@ -116,8 +116,14 @@
           label="操作"
           >
           <template slot-scope="scope">
-            <el-button @click="handleClick(scope.row)" type="text" size="small" class="active">查看</el-button>
-            <el-button type="text" size="small">编辑</el-button>
+            <!-- <el-button @click="handleClick(scope.row)" type="text" size="small" class="active">查看</el-button> -->
+            <!-- <el-button type="text" size="small">编辑</el-button> -->
+            <el-button
+              @click.native.prevent="deleteRow(scope.$index, data)"
+              type="text"
+              size="small">
+              移除
+            </el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -156,6 +162,10 @@ import Vue from "vue"
       }
     },
     methods: {
+      // 删除当前行
+      deleteRow(index, rows) {
+         rows.splice(index, 1);
+       },
       toggleShow(){
         this.isShow=!this.isShow
       },
