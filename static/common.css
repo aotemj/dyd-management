@@ -91,12 +91,12 @@ a {
 }
 .el-table .cell>div{
   /*background-color: green;*/
-  max-width:160px;
+  /*max-width:160px;*/
   box-sizing: border-box;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
-  height:50px;
+  /*max-height:250px;*/
   padding:0;
   cursor:pointer;
   margin:0 auto;
