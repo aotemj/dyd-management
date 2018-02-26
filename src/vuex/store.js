@@ -394,6 +394,25 @@ const state = {
       status: '认证中', //认证结果
       operateType:'正在筹备',
     },
+  ],
+  productData:[
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//所属商家
+      productType:'茗茶',//商品类型
+      productName:'绿杨春',
+      totalDiscountPersent:'90%',
+      discountPersent:'60%',
+      productType:'已购买',
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
   ]
 }
 

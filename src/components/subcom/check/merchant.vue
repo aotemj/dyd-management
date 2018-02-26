@@ -16,12 +16,6 @@
 	      type="index"
 	      width="55">
 	    </el-table-column>
-	  <!--   <el-table-column
-	      prop="date"
-	      label="时间排序测试"
-	      sortable
-	      width="">
-	    </el-table-column> -->
 	    <el-table-column
 	      prop="email"
 	      label="商家账号"
