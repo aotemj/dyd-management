@@ -108,3 +108,7 @@ a {
 .el-table td,.el-table th{
   padding:0 ;
 }
+/*form表单下外边距重置*/
+.el-form-item{
+  margin-bottom:0;
+}

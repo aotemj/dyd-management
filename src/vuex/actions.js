@@ -1,8 +1,8 @@
 //test
-export const increment = ({
+export const toggleshow = ({
 	commit
 }) => {
-	commit('INCREMENT')
+	commit('TOGGLESHOW')
 }
 export const decrement = ({
 	commit
