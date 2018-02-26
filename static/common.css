@@ -110,5 +110,5 @@ a {
 }
 /*form表单下外边距重置*/
 .el-form-item{
-  margin-bottom:0;
+  /*margin-bottom:0;*/
 }

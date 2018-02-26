@@ -1,13 +1,13 @@
 <!-- 用户提现审核 -->
 <template>
 	<div class="con-box">
-		<el-form :inline="true" :model="formInline" class="demo-form-inline">
-			  <el-form-item label="用户手机号">
-			    <el-input size="mini" v-model="formInline.merchant" placeholder="用户手机号"></el-input>
+		<el-form :inline="true" :rules="rules" ref="formInline" :model="formInline" class="demo-form-inline">
+			  <el-form-item label="用户手机号" prop="phone">
+			    <el-input size="mini" v-model="formInline.phone" placeholder="用户手机号"></el-input>
 			  </el-form-item>
 			  <el-form-item>
-			    <el-button size="mini" @click="">清空</el-button>
-			    <el-button size="mini" type="primary" @click="">查询</el-button>
+			    <el-button size="mini" @click="resetForm('formInline')">清空</el-button>
+			    <el-button size="mini" type="primary" @click="search('formInline')">查询</el-button>
 			    <el-button size="mini" type="primary" @click="">批量提现</el-button>
 			  </el-form-item>
 			</el-form>
@@ -144,12 +144,25 @@
 	</div>
 </template>
 <script>
+//按需引入 手机号验证：
+import { isvalidPhone } from "../../../kits/validate.js";
+
+	//定义一个全局的变量，谁用谁知道
+	var validPhone=(rule, value,callback)=>{
+    if (!value){
+        callback(new Error('请输入电话号码'))
+    }else  if (!isvalidPhone(value)){
+      callback(new Error('请输入正确的11位手机号码'))
+    }else {
+        callback()
+	  }
+	}
+
 export default {
 		data(){
 			return {
 				formInline: {
-           merchant: '',
-           region: ''
+           phone: ''
          	},
          	value5:0,
         	data:this.$store.state.userUnDepositData,
@@ -158,9 +171,30 @@ export default {
 	        currentPage: 1,
 	        pagesize:10,
 	        dialogVisible: false,//审核弹出框
+	        //表单验证
+	        rules: {
+            phone: [
+              { required: true, trigger: 'blur', validator: validPhone }//这里需要用到全局变量
+            ]
+          }
 			}
 		},
 		methods:{
+			search(formName){
+				this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');//这里就是符合规则，然后去调对应的接口
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+			},
+			// 清除表单内容
+			resetForm(formName){
+			  // console.log('reset');
+			  this.$refs[formName].resetFields();
+			},
 			//提示框关闭
 			handleClose(done) {
 			  this.$confirm('确认关闭？')
