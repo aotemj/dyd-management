@@ -261,6 +261,140 @@ const state = {
       status: '提现中', //状态
     },
   ],
+  merchantData:[
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+    {
+      email: 'xiaoming@sina.com', //商家账号
+      merchantName:'扬州茶楼',//商家名称
+      address: '扬州市浦江东路', //商家地址
+      successDate:'2016-01-04 18:30:35',
+      tel: '13333333333', //商家联系电话
+      type:'自营',//自营
+      amount: 222.20, //提现金额
+      withdrawalWay: '支付宝', //提现方式
+      status: '认证中', //认证结果
+      operateType:'正在筹备',
+    },
+  ]
 }
 
 
