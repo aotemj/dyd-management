@@ -17,39 +17,88 @@
 	      width="55">
 	    </el-table-column>
 	    <el-table-column
-	      prop="email"
 	      label="商家账号"
 	      width="">
+	      <template slot-scope="scope">
+					<el-tooltip v-if="isShow" class="item" effect='dark' placement="right">
+						<div slot="content">{{scope.row.amount}}</div>
+						<el-button v-on:click="toggleShow" type="text" style="color:#000">
+							{{scope.row.amount}}
+						</el-button>
+					</el-tooltip>
+					<div v-else="isShow" v-on:click="toggleShow">{{scope.row.amount}}</div>
+	      </template>
 	    </el-table-column>
 	    <el-table-column
-	      prop="merchantName"
 	      label="商家名称"
 	      width="">
+	      <template slot-scope="scope">
+	      	<el-tooltip v-if="isShow" class="item" effect="dark" placement="right">
+	      		<div slot="content">{{scope.row.merchantName}}</div>
+	      		<el-button v-on:click="toggleShow" type="text" style="color:#000">{{scope.row.merchantName}}</el-button>
+	      	</el-tooltip>
+	      	<div v-else="isShow" v-on:click="toggleShow">{{scope.row.merchantName}}</div>
+	      </template>
 	    </el-table-column>
 	    <el-table-column
 	      prop="address"
 	      label="商家地址"
 	      width="">
+	      <template slot-scope="scope">
+					<el-tooltip v-if="isShow" class="item" effect="dark" placement="right">
+						<div slot="content">{{scope.row.address}}</div>
+						<el-button v-on:click="toggleShow" type="text" style="color:#000;">{{scope.row.address}}</el-button>
+					</el-tooltip>
+					<div v-else="isShow" v-on:click="toggleShow">{{scope.row.address}}</div>
+	      </template>
 	    </el-table-column>
 			<el-table-column
 			  prop="tel"
 			  label="联系电话"
 			  width="">
+			  <template slot-scope="scope">
+ 			  	<el-tooltip v-if="isShow" class="item" effect="dark" placement="right">
+ 			  		<div slot="content">{{scope.row.tel}}</div>
+ 			  		<el-button v-on:click="toggleShow" type="text" style="color:#000">{{scope.row.tel}}</el-button>
+ 			  	</el-tooltip>
+ 			  	<div v-else="isShow" v-on:click="toggleShow">{{scope.row.tel}}</div>
+			  </template>
 			</el-table-column>
 			<el-table-column
 			  prop="type"
 			  label="商家类型"
 			  width="">
+			  <template slot-scope="scope">
+			  	<el-tooltip v-if="isShow" class="item" effect="dark" placement="right">
+			  		<div slot="content">{{scope.row.type}}</div>
+						<el-button v-on:click="toggleShow" type="text" style="color:#000">{{scope.row.type}}</el-button>
+			  	</el-tooltip>
+			  	<div v-else="isShow" v-on:click="toggleShow">{{scope.row.type}}</div>
+			  </template>
 			</el-table-column>
 			<el-table-column
 			  prop="status"
 			  label="认证结果"
 			  width="">
+			  <template slot-scope="scope">
+			  	<el-tooltip v-if="isShow" class="item" effect="dark" placement="right">
+			  		<div slot="content">{{scope.row.status}}</div>
+			  		<el-button v-on:click="toggleShow" type="text" style="color:#000">{{scope.row.status}}</el-button>
+			  	</el-tooltip>
+			  	<div v-else="isShow" v-on:click="toggleShow">{{scope.row.status}}</div>
+			  </template>
 			</el-table-column>
 			<el-table-column
 			  prop="operateType"
 			  label="经营状态"
 			  width="">
+			  <template slot-scope="scope">
+					<el-tooltip v-if="isShow" class="item" effect="dark" placement="right">
+						<div slot="content">{{scope.row.operateType}}</div>
+						<el-button v-on:click="toggleShow" type="text" style="color:#000">{{scope.row.operateType}}</el-button>
+					</el-tooltip>
+					<div v-else="isShow" v-on:click="toggleShow">{{scope.row.operateType}}</div>
+			  </template>
 			</el-table-column>
 	    <el-table-column
 	      label="审核"
@@ -90,6 +139,7 @@
 			return {
 				data:this.$store.state.merchantData,
  				multipleSelection: [],
+ 				// 提示信息显示隐藏切换
         // 分页
         currentPage: 1,
         pagesize:10,
@@ -97,6 +147,10 @@
 			}
 		},
 		methods:{
+			// 切换isShow显示状态
+			toggleShow(){
+				this.$store.commit('TOGGLESHOW');
+			},
 			//提示框关闭
 			handleClose(done) {
 			  this.$confirm('确认关闭？')
@@ -108,8 +162,6 @@
 			handleSelectionChange(val) {
     	     this.multipleSelection = val;
     	   },
-
-				//分页
   	   handleSizeChange(val) {
           // console.log(`每页 ${val} 条`);
           this.pagesize = val;
@@ -126,6 +178,11 @@
         	// let prevData = (this.currentPage-1)*this.pagesize;
 
         }
+		},
+		computed:{
+			isShow(){
+				return this.$store.state.isShow;
+			}
 		}
 	}
 </script>

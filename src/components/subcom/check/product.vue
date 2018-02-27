@@ -90,6 +90,9 @@
 			}
 		},
 		methods:{
+			toggleShow(){
+				this.$store.commit("TOGGLESHOW")
+			},
 			// 清除表单内容
 			resetForm(formName){
 			  // console.log('reset');
